@@ -1,0 +1,41 @@
+1.a)
+Initial State:
+All pieces separated
+
+States:
+Every version of combinations for every piece of track that is left
+
+Goal Test:
+Has the Railway no overlapping tracks and no loose ends
+
+Path cost:
+One for setting up one pice of track
+
+b)
+DFS would be the most suitable uninformed search algorithm. We have much less time-complexity and less storage-complexity than with BFS, because we just need to find a solution not every solution. The path cost would always be the same, considering that building every branch of the tree would be unnecessary. DFS is therefore the most suitable.
+
+c)
+Without the fork-pieces the railway couldn't make a full turn.
+
+2.
+ ....... (continue with a sketch Korbinian!)
+
+
+
+3.
+Uniform-cost-search is a special case of A*-Search. It has a heuristic of 1, so the only thing that changes is the path-cost and that changes the priority queue.
+
+4.
+
+
+
+
+
+5
+
+
+
+
+6.
+Auch wenn man gegen ein optimales MAX spielen würde, wäre die zahl die genommen werden würde niemals niedriger als wenn man gegen ein Optimales MIN spielen würde. Da MIN immer die niedrigste Zahl nimmt die verfügbar ist, somit ist es nicht möglich das ein Optimales MAX eine niedrigere Zahl als das optimales MIN nimmt. ----> Die Aussage ist wahr.
+
