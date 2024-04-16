@@ -21,6 +21,4 @@ public class Human {
     void bicycle(){
         System.out.println(this.name + " rides his Bicycle");
     }
-    void driving(){}
-    if(H)
 }

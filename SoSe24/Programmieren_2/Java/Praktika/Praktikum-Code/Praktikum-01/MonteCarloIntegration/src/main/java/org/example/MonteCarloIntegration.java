@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.Random;
 
 public class MonteCarloIntegration {
     // Main Mehtode um sich dem Integral anzunähern
@@ -18,7 +17,7 @@ public class MonteCarloIntegration {
             ++allPoints;
             double x = Math.random();
             double y = Math.random();
-            if (y <= function(x)){ // if-statement um zu überprüfen ob der y-Wert unter der Funktionskurve liegt
+            if (y <= function(x)){ // if-statement um zu überprüfen, ob der y-Wert unter der Funktionskurve liegt
                 ++pointsUnderCurve;
             }
             approxInt2 = pointsUnderCurve / allPoints; // approxInt2 wird der neue Wert zugeordnet
