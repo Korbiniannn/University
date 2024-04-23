@@ -8,8 +8,7 @@ public class PasswordManager {
 
   }
 
-  private static void addPasswordEntry(PasswordStore store, String website, 
-      String loginName, PasswordComplexity complexity){
+  private static void addPasswordEntry(PasswordStore store, String website, String loginName, PasswordComplexity complexity){
 
     /*PasswordEntry entry = new PasswordEntry(website, loginName, complexity);
 

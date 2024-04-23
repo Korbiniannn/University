@@ -47,5 +47,6 @@ public class Einmaleins {
         else {
             System.out.println(count+" von "+x+" Aufgaben korrekt! ("+percentage+"%)\nNächstes mal machst du´s bestimmt besser!");
         }
+        scanner.close();
     }
 }

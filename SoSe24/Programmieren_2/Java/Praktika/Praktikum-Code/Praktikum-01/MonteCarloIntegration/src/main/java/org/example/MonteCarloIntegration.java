@@ -28,6 +28,5 @@ public class MonteCarloIntegration {
     public static double function(double x) { // Methode für die Funktion
 
         return Math.sin(Math.PI*x);
-
     }
 }
