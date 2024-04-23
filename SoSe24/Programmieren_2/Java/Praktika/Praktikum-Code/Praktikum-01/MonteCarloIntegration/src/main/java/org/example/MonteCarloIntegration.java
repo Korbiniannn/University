@@ -26,6 +26,8 @@ public class MonteCarloIntegration {
         System.out.println("Iteration "+(allPoints-10)+": "+approxInt2+" ("+last_Change+")");
     }
     public static double function(double x) { // Methode für die Funktion
+
         return Math.sin(Math.PI*x);
+
     }
 }

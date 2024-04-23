@@ -8,13 +8,17 @@ public class Einmaleins {
         System.out.println("Wie viele Aufgabe möchten Sie rechnen? (keine negativen Zahlen)");
         int x = Integer.parseInt(scanner.nextLine());
         int count = x; // count um zu überprüfen wie viele Runden man richtig geantwortet hat
+        while(x <= 0){
+            System.out.println("Please enter a positive number!");
+            x = Integer.parseInt(scanner.nextLine());
+        }
         for(int i = 0; i < x; i++) { // Wiederholt sich x-mal, erzeugt immer wieder zufällige Aufgaben
             Random random = new Random();
             int randint = random.nextInt(10)+1;
             int randint2 = random.nextInt(10)+1;
             System.out.println("Was ist "+randint+" * "+randint2+"?");
             int y = Integer.parseInt(scanner.nextLine()); // Eingabe der Antwort
-            if(y == randint * randint2) { // Prüfung der Rihtigkeit
+            if(y == randint * randint2) { // Prüfung der Richtigkeit
                 System.out.println("Richtig!");
             }
             else{
