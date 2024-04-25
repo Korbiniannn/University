@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 public class PasswordEntryTest{
 
-  /*@Test
+  @Test
   public void testConstructor(){
 
     PasswordEntry entry = new PasswordEntry("reddit.com", "lurker123", PasswordComplexity.MEDIUM);
@@ -26,7 +26,7 @@ public class PasswordEntryTest{
     entry = new PasswordEntry("reddit.com", "", PasswordComplexity.MEDIUM);
     assertEquals("empty login name is possible", "", entry.getLoginName());
 
-  }*/
+  }
 
   /*@Test
   public void testConstructor2(){
