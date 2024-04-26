@@ -9,7 +9,7 @@ public class PasswordEntry{
         this.website = website;
         this.loginName = loginName;
         this.passwordComplexity = passwordComplexity;
-        passwordComplexity.generatePassword();
+        this.password= passwordComplexity.generatePassword();
 
     }
     public String getWebsite(){

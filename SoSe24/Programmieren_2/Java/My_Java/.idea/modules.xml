@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance/Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/My_Java.iml" filepath="$PROJECT_DIR$/.idea/My_Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/abstraction/abstraction.iml" filepath="$PROJECT_DIR$/abstraction/abstraction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/access_modifiers/access_modifiers.iml" filepath="$PROJECT_DIR$/access_modifiers/access_modifiers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/method_overriding/method_overriding.iml" filepath="$PROJECT_DIR$/method_overriding/method_overriding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/super_keyword/super_keyword.iml" filepath="$PROJECT_DIR$/super_keyword/super_keyword.iml" />
+    </modules>
+  </component>
+</project>
