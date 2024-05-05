@@ -28,7 +28,7 @@ public class PasswordEntryTest{
 
   }
 
-  /*@Test
+  @Test
   public void testConstructor2(){
     PasswordEntry entry = new PasswordEntry("reddit.com", PasswordComplexity.MEDIUM);
     assertEquals("website must be reddit.com", "reddit.com", entry.getWebsite());
@@ -42,9 +42,9 @@ public class PasswordEntryTest{
         IllegalArgumentException.class, () -> new PasswordEntry("   ", PasswordComplexity.MEDIUM));
     assertThrows("password complexity must not be null",
         IllegalArgumentException.class, () -> new PasswordEntry("reddit.com", null));
-  }*/
+  }
 
-  /*@Test
+  @Test
   public void testCopyConstructor(){
     PasswordEntry entry = new PasswordEntry("reddit.com", "lurker123", PasswordComplexity.MEDIUM);
     PasswordEntry anotherEntry = new PasswordEntry("reddit.com", "lurker123", PasswordComplexity.MEDIUM);
@@ -60,9 +60,9 @@ public class PasswordEntryTest{
         IllegalArgumentException.class,
         () -> new PasswordEntry(null));
 
-  }*/
+  }
 
-  /*@Test
+  @Test
   public void testRegeneratePassword(){
     PasswordEntry entry = new PasswordEntry("reddit.com", "lurker123", PasswordComplexity.MEDIUM);
 
@@ -73,9 +73,9 @@ public class PasswordEntryTest{
     assertNotSame("generate password must generate a new password", 
         password, entry.getPassword());
 
-  }*/
+  }
 
-  /*@Test
+  @Test
   public void testEquals(){
 
     PasswordEntry entry = new PasswordEntry("reddit.com", "lurker123", PasswordComplexity.MEDIUM);
@@ -101,6 +101,6 @@ public class PasswordEntryTest{
     assertTrue("equal must return true for equal entries",
         entry.equals(new PasswordEntry("reddit.com", "lurker123", PasswordComplexity.MEDIUM)));
 
-  }*/
+  }
 
 }

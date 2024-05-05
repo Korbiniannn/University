@@ -1,5 +1,9 @@
 public class PasswordStore {
-    private String password;
+    int size;
+    private PasswordEntry firstEntry;
+
+
+
     public int getSize(){
         return password.length();
     }
