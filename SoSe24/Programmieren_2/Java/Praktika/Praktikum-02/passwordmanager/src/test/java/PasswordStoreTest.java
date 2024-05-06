@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 public class PasswordStoreTest{
 
-  /*private PasswordEntry e1;
+  private PasswordEntry e1;
   private PasswordEntry e2;
   private PasswordEntry e3;
 
@@ -22,9 +22,9 @@ public class PasswordStoreTest{
     assertEquals("empty password store has size 0", 0, store.getSize());
     assertEquals("empty password store has no first entry", null, store.getFirstEntry());
 
-  }*/
+  }
 
-  /*@Test
+  @Test
   public void testContains(){
 
     PasswordStore store = new PasswordStore();
@@ -45,9 +45,9 @@ public class PasswordStoreTest{
         IllegalArgumentException.class,
         () -> store.contains(null));
 
-  }*/
+  }
 
-  /*@Test
+  @Test
   public void testAdd(){
 
     PasswordStore store = new PasswordStore();
@@ -77,7 +77,7 @@ public class PasswordStoreTest{
     assertFalse("must return false when instance equal to e2 is added again", 
         store.add(new PasswordEntry("moodle.haw-landshut.de", "s-cauer", PasswordComplexity.MEDIUM)));
 
-  }*/
+  }
 
   /*@Test
   public void testGet(){

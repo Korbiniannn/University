@@ -1,11 +1,11 @@
 import java.util.Objects;
 
 public class PasswordEntry{
-    String website;
-    String loginName;
-    PasswordComplexity passwordComplexity;
-    String password;
-    public PasswordEntry nextEntry = null;
+    private final String website;
+    private final String loginName;
+    private final PasswordComplexity passwordComplexity;
+    public String password;
+    PasswordEntry nextEntry = null;
 
 
     public PasswordEntry(String website, String loginName, PasswordComplexity passwordComplexity){
@@ -87,8 +87,8 @@ public class PasswordEntry{
             return false;
         }
         PasswordEntry otherPasswordEntry = (PasswordEntry) other;
-        return Objects.equals(this.website, otherPasswordEntry.website)&&
-                Objects.equals(this.loginName, otherPasswordEntry.loginName)&&
-                Objects.equals(this.passwordComplexity, otherPasswordEntry.passwordComplexity);
+        return Objects.equals(website, otherPasswordEntry.website)&&
+                Objects.equals(loginName, otherPasswordEntry.loginName)&&
+                passwordComplexity == otherPasswordEntry.passwordComplexity;
     }
 }
