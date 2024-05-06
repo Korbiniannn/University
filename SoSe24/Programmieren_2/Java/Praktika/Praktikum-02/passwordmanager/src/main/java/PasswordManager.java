@@ -4,32 +4,36 @@ import java.util.Scanner;
 public class PasswordManager {
 
   private static void addExampleEntries(PasswordStore store){
-
-
+    PasswordEntry e1 = new PasswordEntry("reddit.com","extremelurker", PasswordComplexity.PIN);
+    PasswordEntry e2 = new PasswordEntry("github.com", "java-programmer", PasswordComplexity.SIMPLE);
+    PasswordEntry e3 = new PasswordEntry("moodle.haw-landshut.de", "s-cauer", PasswordComplexity.COMPLEX);
+    store.add(e1);
+    store.add(e2);
+    store.add(e3);
   }
 
   private static void addPasswordEntry(PasswordStore store, String website, String loginName, PasswordComplexity complexity){
 
-    /*PasswordEntry entry = new PasswordEntry(website, loginName, complexity);
+    PasswordEntry entry = new PasswordEntry(website, loginName, complexity);
 
     if (store.add(entry)){
       System.out.printf("New entry added: %s%n", entry);
     } else {
       System.out.println("Entry already exists");
-    }*/
+    }
 
   }
 
   private static void printPasswordStore(PasswordStore store){
-    // store.printPasswordStore();
+    store.printPasswordStore();
   }
 
   private static void printPasswordStoreForWebsite(PasswordStore store, String website){
-    // store.printPasswordStore(website);
+    store.printPasswordStore(website);
   }
 
   private static void regeneratePassword(PasswordStore store, int index){
-    // store.get(index).regeneratePassword();
+    store.get(index).regeneratePassword();
   }
 
   private static void removeEntry(PasswordStore store, int index){

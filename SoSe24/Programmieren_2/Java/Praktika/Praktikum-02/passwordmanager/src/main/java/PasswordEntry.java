@@ -1,5 +1,13 @@
 import java.util.Objects;
 
+/**
+ * @author korbinian ziegltrum
+ * @version 1.0.
+ *
+ * Methode um einen Eintrag darzustellen, der die Website-URL, den LoginNamen,
+ * die Passwortstärke und das Passwort beinhaltet.
+ */
+
 public class PasswordEntry{
     private final String website;
     private final String loginName;
@@ -7,15 +15,22 @@ public class PasswordEntry{
     public String password;
     PasswordEntry nextEntry = null;
 
-
-    public PasswordEntry(String website, String loginName, PasswordComplexity passwordComplexity){
-        if (website == null || website.isBlank()) {
+    /**
+     * Konstruiert einen Eintrag mit der Website-URL, dem Login Namen und der Passwortstärke.
+     *
+     * @param website Die Website-URL
+     * @param loginName Der Login Name
+     * @param passwordComplexity Die Passwortstärke
+     * @throws IllegalArgumentException wenn die Website "null" oder "blank" ist oder wenn die Passwortstärke "null" ist.
+     */
+    public PasswordEntry(String website, String loginName, PasswordComplexity passwordComplexity){ // Konstruktor für PasswortEntry
+        if (website == null || website.isBlank()) { // If-Statement um sicherzustellen, dass Website weder "null" noch "Blank" ist
             throw new IllegalArgumentException("Website can't be null nor only whitespaces!");
         }
         else{
             this.website = website;
         }
-        if (passwordComplexity == null) {
+        if (passwordComplexity == null) { // If-Statement um sicherzustellen, dass passwordComplexity nicht "null" ist
             throw new IllegalArgumentException("PasswordComplexity can't be null!");
         }else {
             this.passwordComplexity = passwordComplexity;
@@ -25,11 +40,23 @@ public class PasswordEntry{
 
     }
 
-    public PasswordEntry(String website, PasswordComplexity passwordComplexity){
+    /**
+     * Konstruktor, der alle Argumente des ersten aufnimmt bis auf loginName
+     *
+     * @param website Die Website-URL
+     * @param passwordComplexity Die Passwortstärke
+     */
+    public PasswordEntry(String website, PasswordComplexity passwordComplexity){ // Konstruktor, der alle Argumente des ersten aufnimmt bis auf loginName
         this(website, null, passwordComplexity);
     }
 
-    public PasswordEntry(PasswordEntry other){
+    /**
+     * Konstruktor, der ein PasswordEntry-Objekt kopieren soll.
+     *
+     * @param other Das Objekt, das kopiert werden soll.
+     * @throws IllegalArgumentException wenn Other "null" ist.
+     */
+    public PasswordEntry(PasswordEntry other){ // Copier-Konstruktor
         if (other == null) {
             throw new IllegalArgumentException("Other can't be null!");
         }
@@ -42,53 +69,97 @@ public class PasswordEntry{
         }
     }
 
-    public String getWebsite(){
+    /**
+     * Gibt die Website-URL zurück.
+     *
+     * @return Die Website-URL.
+     */
+    public String getWebsite(){ // Getter für Website
         return website;
     }
 
-    public String getLoginName(){
+    /**
+     * Gibt den login Namen zurück.
+     *
+     * @return Den login Namen.
+     */
+    public String getLoginName(){ // Getter für LoginName
         return loginName;
     }
 
-    public PasswordComplexity getPasswordComplexity(){
+    /**
+     * Gibt die Passwortstärke zurück.
+     *
+     * @return Die Passwortstärke.
+     */
+    public PasswordComplexity getPasswordComplexity(){ // Getter für PasswordComplexity
         return passwordComplexity;
     }
 
-    public String getPassword(){
+    /**
+     * Gibt das Passwort zurück.
+     *
+     * @return Das Passwort.
+     */
+    public String getPassword(){ // Getter für Password
         return password;
     }
 
-    public PasswordEntry getNextEntry(){
+    /**
+     * Gibt das nächste Objekt der Liste zurück.
+     *
+     * @return Das nächte Objekt der Liste.
+     */
+    public PasswordEntry getNextEntry(){ // Getter für NextEntry
         return nextEntry;
     }
 
-    public void setNextEntry(PasswordEntry nextEntry){
+    /**
+     * Setzt den nächsten Eintrag der Liste.
+     *
+     * @param nextEntry Der Eintrag der gesetzt werden soll.
+     */
+    public void setNextEntry(PasswordEntry nextEntry){ // Setter für NextEntry
         this.nextEntry = nextEntry;
     }
 
-    public void regeneratePassword(){
+    /**
+     * Generiert ein neues Passwort.
+     */
+    public void regeneratePassword(){ // Methode um das Passwort neu zu generieren
         this.password = passwordComplexity.generatePassword();
     }
 
+    /**
+     * Gibt einen Eintrag als String in formatiertem Format zurück.
+     *
+     * @return Den Eintrag als String.
+     */
     @Override
-    public String toString(){
-        return this.website +" L:"+this.loginName+" P:"+this.password+"("+this.passwordComplexity+")";
+    public String toString(){ // Overridden toString Methode um jeden Eintrag nach bestimmtem Schema zurückzugeben
+        return this.website +" L:"+this.loginName+" P:"+this.password+" ("+this.passwordComplexity+")";
     }
 
+    /**
+     * Methode um zu überprüfen, ob zwei Objekte gleich sind.
+     *
+     * @param other Das Objekt, das überprüft wird.
+     * @return true, falls die Objekte gleich sind sonst false.
+     */
     @Override
-    public boolean equals(Object other){
+    public boolean equals(Object other){ // Overridden equals Methode um zu prüfen, ob zwei Objekte gleich sind
         if (this == other){
             return true;
         }
-        if (other == null){
+        if (other == null){ // filter für "null" Einträge
             return false;
         }
-        if (getClass() != other.getClass()){
+        if (getClass() != other.getClass()){ // filter für Objekte unterschiedlicher Klassen
             return false;
         }
         PasswordEntry otherPasswordEntry = (PasswordEntry) other;
         return Objects.equals(website, otherPasswordEntry.website)&&
                 Objects.equals(loginName, otherPasswordEntry.loginName)&&
-                passwordComplexity == otherPasswordEntry.passwordComplexity;
+                Objects.equals(passwordComplexity, otherPasswordEntry.passwordComplexity);
     }
 }
