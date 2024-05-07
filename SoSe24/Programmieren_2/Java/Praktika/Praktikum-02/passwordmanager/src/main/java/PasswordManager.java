@@ -1,8 +1,16 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class PasswordManager {
+/**
+ * Klasse um die Passwörter zu Managen
+ */
 
+public class PasswordManager {
+  /**
+   * Fügt beispiel Einträge hinzu (zum Testen)
+   *
+   * @param store Objekt der Klasse PasswordStore
+   */
   private static void addExampleEntries(PasswordStore store){
     PasswordEntry e1 = new PasswordEntry("reddit.com","extremelurker", PasswordComplexity.PIN);
     PasswordEntry e2 = new PasswordEntry("github.com", "java-programmer", PasswordComplexity.SIMPLE);
@@ -12,6 +20,14 @@ public class PasswordManager {
     store.add(e3);
   }
 
+  /**
+   * Fügt neuen Eintrag zur Liste hinzu, wenn er noch nicht vorhanden ist.
+   *
+   * @param store Objekt der Klasse PasswordStore
+   * @param website Website-URL
+   * @param loginName Login Name
+   * @param complexity Passwortstärke
+   */
   private static void addPasswordEntry(PasswordStore store, String website, String loginName, PasswordComplexity complexity){
 
     PasswordEntry entry = new PasswordEntry(website, loginName, complexity);
@@ -24,14 +40,33 @@ public class PasswordManager {
 
   }
 
+  /**
+   * Ruft die "printPasswordStore" Methode aus PasswordStore auf um alle Einträge wiederzugeben.
+   *
+   * @param store Objekt der Klasse PasswordStore
+   */
   private static void printPasswordStore(PasswordStore store){
     store.printPasswordStore();
   }
 
+  /**
+   * Ruft die überladene "printPasswordStore(website)" Methode aus PasswordStore auf um alle Einträge
+   * zu einer Website wiederzugeben.
+   *
+   * @param store Objekt der Klasse PasswordStore.
+   * @param website Website-URL
+   */
   private static void printPasswordStoreForWebsite(PasswordStore store, String website){
     store.printPasswordStore(website);
   }
 
+  /**
+   * Ruft die "regeneratePassword" Methode auf um ein neues Passwort zu erstellen
+   * für einen Eintrag an einem bestimmten Index, der durch die "get(index)" Methode gegeben wird.
+   *
+   * @param store Objekt der Klasse PasswordStore
+   * @param index Index des gewünschten Eintrags
+   */
   private static void regeneratePassword(PasswordStore store, int index){
     store.get(index).regeneratePassword();
   }
@@ -94,6 +129,12 @@ public class PasswordManager {
 
   }
 
+  /**
+   *
+   * @param scanner Um einen Index entgegenzunehmen
+   * @param store Objekt der Klasse PasswordStore
+   * @return den Index
+   */
   private static int readIndex(Scanner scanner, PasswordStore store){
 
     boolean valid = false;
@@ -130,6 +171,10 @@ public class PasswordManager {
 
   }
 
+  /**
+   *
+   * @param args Kommandozeilenparameter
+   */
   public static void main(String[] args) {
     PasswordStore store = new PasswordStore();
 

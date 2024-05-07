@@ -4,8 +4,8 @@
  * Diese Klasse verwaltet alle Einträge in der Liste.
  */
 public class PasswordStore {
-    int size;
-    PasswordEntry firstEntry;
+    private int size;
+    private PasswordEntry firstEntry;
 
     /**
      * Default Konstruktor der einen leeren PasswordStore erstellt.

@@ -12,8 +12,8 @@ public class PasswordEntry{
     private final String website;
     private final String loginName;
     private final PasswordComplexity passwordComplexity;
-    public String password;
-    PasswordEntry nextEntry = null;
+    private String password;
+    private PasswordEntry nextEntry = null;
 
     /**
      * Konstruiert einen Eintrag mit der Website-URL, dem Login Namen und der Passwortstärke.

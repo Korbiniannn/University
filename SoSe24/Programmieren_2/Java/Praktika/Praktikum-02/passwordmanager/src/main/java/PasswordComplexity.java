@@ -10,10 +10,28 @@ import java.util.Random;
 // Hilfsklasse um Passwörter mit verschiedenen Stärken zu erzeugen
 public enum PasswordComplexity {
     // die verschiedenen Typen der Passwort-komplexität
+    /**
+     * Passwortkomplexität der länge 4 mit den Zeichen 0-9
+     */
     PIN("0", 4),
+    /**
+     * Passwortkomplexität der länge 5 mit den Zeichen des abc's in Kleinschreibung sowie Großschreibung
+     */
     SIMPLE("aA", 5),
+    /**
+     * Passwortkomplexität der länge 8 mit den Zeichen 0-9 sowie
+     * die Zeichen des abc's in Kleinschreibung sowie Großschreibung
+     */
     MEDIUM("aA0", 8),
+    /**
+     * Passwortkomplexität der länge 10 mit den Zeichen 0-9 sowie
+     * die Zeichen des abc's in Kleinschreibung sowie Großschreibung und den Sonderzeichen
+     */
     COMPLEX("aA0!", 10),
+    /**
+     * Passwortkomplexität der länge 16 mit den Zeichen 0-9 sowie
+     * die Zeichen des abc's in Kleinschreibung sowie Großschreibung und den Sonderzeichen
+     */
     SUPER_COMPLEX("aA0!", 16);
 
     private final String chars;
