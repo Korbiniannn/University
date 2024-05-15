@@ -1,0 +1,10 @@
+services:
+  mongodb:
+    image: mongo:latest
+  web:
+    build: .
+    ports:
+      - "8000:80"
+    depends_on:
+      - mongodb
+
