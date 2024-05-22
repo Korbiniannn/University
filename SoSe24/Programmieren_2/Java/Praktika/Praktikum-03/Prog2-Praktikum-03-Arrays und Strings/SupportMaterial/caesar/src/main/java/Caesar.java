@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Caesar{
@@ -15,14 +16,28 @@ public class Caesar{
         }
       }
       if(!key.contains(String.valueOf(text.charAt(i)))){
-        result.append(text.charAt(i)); 
+        result.append(text.charAt(i));
       }
     }
     return result.toString();
   }
 
   public static void printStatistics(String text){
-    // TODO
+    int l = text.length();
+    int numLetters = 0;
+    int[] count = new int[26];
+    for(int i = 0; i < l; i++){
+      if(ABC.contains(String.valueOf(text.charAt(i)))){
+        numLetters++;
+        count[ABC.indexOf(text.charAt(i))]++;
+      }
+    }
+    for(int i = 0; i < 26; i++){
+      double percentage = count[i]/(double)numLetters*100;
+      System.out.println(ABC.charAt(i)+": "+percentage+"%");
+    }
+
+
   }
 
   public static void main(String[] args){
