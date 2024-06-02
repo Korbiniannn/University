@@ -12,7 +12,7 @@ public class Bingo {
                     { 13, 17, 43, 48, 67}
             };
 
-    public static int[][] generateBingoCard(){
+    public static int[][] generateBingoCard(){ // Zusatzaufgabe um eine zufällige Bingo-Karte zu erstellen
         Random randint = new Random();
         int[][] bingoCard = new int[5][5];
         int min_wiederholung = 0;
@@ -44,23 +44,25 @@ public class Bingo {
         return bingoCard;
     }
 
-    public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args){ // Main-Methode um alles zu kombinieren
+        Scanner scanner = new Scanner(System.in); // Scanner für den User input
        //int[][] bingoCard = generateBingoCard();
-        int[][] bingoCard = BINGO_EXAMPLE;
-        checkBingoCard(bingoCard);
-       while(!bingo(bingoCard)) {
+        int[][] bingoCard = BINGO_EXAMPLE; // lokale Variable bingoCard initialisiert mit BINGO_EXAMPLE
+        checkBingoCard(bingoCard); // prüft die bingoCard
+       while(!bingo(bingoCard)) { // Schleife wiederholt sich, solange bis ein Bingo kommt
            //checkBingoCard(bingoCard);
            printBingoCard(bingoCard);
-           System.out.println("\nGezogene Zahl: ");
-           int number = Integer.parseInt(scanner.nextLine());
-           fillBingoCard(bingoCard, number);
+           System.out.println("\nGezogene Zahl: "); // Frägt den User nach der gezogenen Zahl
+           int number = Integer.parseInt(scanner.nextLine()); // User input
+           if(1>number || number>75){// prüft ob, die eingegebene Zahl gültig ist
+               throw new IllegalArgumentException("Number darf nicht kleiner gleich 0 sein oder größer als 75 sein!");
+           }
            if (fillBingoCard(bingoCard, number)){
                System.out.println("Treffer!!");
            }else{
                System.out.println("Kein Treffer!!");
            }
-           fillBingoCard(bingoCard, number);
+           fillBingoCard(bingoCard, number); // streicht die nummer, falls treffer
        }
         System.out.println("BINGO! BINGO! BINGO! BINGO! BINGO! BINGO! BINGO!");
        printBingoCard(bingoCard);
@@ -68,28 +70,28 @@ public class Bingo {
 
     }
 
-    public static void printBingoCard(int[][] card){
-        char[] header = new char[] { 'B', 'I', 'N', 'G', 'O' };
+    public static void printBingoCard(int[][] card){ // printed die Bingo Karte in einem bestimmten format
+        char[] header = new char[] { 'B', 'I', 'N', 'G', 'O' }; // Header
         for(int x = 0; x < 5; x++){
-            System.out.print(" "+header[x]+" ");
+            System.out.print(" "+header[x]+" "); // printed alle Chars aus header mit bestimmtem Abstand
         }
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 5; i++){ // printed alle Integer aus der Bingo Karte
             System.out.print("\n");
             for(int j = 0; j < 5; j++){
-                if(card[i][j] >= 10){
+                if(card[i][j] >= 10){ // filtert alle zweistelligen Zahlen heraus, um diese mit passendem Abstand anzugeben
                     System.out.print(card[i][j]+" ");
                 }
-                else if (card[i][j] == 0) {
+                else if (card[i][j] == 0) { // wenn eine 0 im Array steht, soll dort eine leere fläche sein (gestrichen)
                     System.out.print("   ");
                 }
-                else {
+                else {// filtert alle einstelligen Zahlen heraus, um diese mit passendem Abstand anzugeben
                     System.out.print(" " + card[i][j] + " ");
                 }
             }
         }
     }
 
-    public static boolean containsDuplicates(int[][] card){
+    public static boolean containsDuplicates(int[][] card){ // läuft für jede Zahl das ganze Array durch, um nach Duplikaten zu suchen
         for(int i = 0; i < 5; i++){
             for(int j = 0; j < 5; j++){
                 int current = card[i][j];
@@ -106,19 +108,19 @@ public class Bingo {
         return false;
     }
 
-    public static void checkBingoCard(int[][] card) {
-        if (card == null) {
+    public static void checkBingoCard(int[][] card) { // prüft nach allen Kriterien, ob eine Bingo Karte gültig ist
+        if (card == null) { //prüft, ob die Karte gleich null ist
             throw new IllegalArgumentException("Bingo!-Karte darf nicht null sein!");
         }
-        if (card.length != 5) {
+        if (card.length != 5) { // prüft, ob die Karte eine andere Reihenanzahl als 5 hat
             throw new IllegalArgumentException("Die Bingo!-Karte muss ein zweidimensionaler quadratischer Array der Dimension 5x5 sein!");
         }
-        for (int[] rows : card) {
+        for (int[] rows : card) { // prüft, ob eine der Reihen mehr oder weniger als 5 Spalten hat
             if (rows == null || rows.length != 5) {
                 throw new IllegalArgumentException("Jede Reihe darf nicht null sein oder eine andere länge als 5 haben!");
             }
         }
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 5; i++){ //prüft die zulässigen Integer für die Spalten
             if (card[i][0]< 1 || card[i][0] > 15) {
                 throw new IllegalArgumentException("Die 1.Spalte darf nur Zahlen zwischen 1 und 15 (inklusive) enthalten");
             }
@@ -137,23 +139,24 @@ public class Bingo {
                 throw new IllegalArgumentException("Die 5.Spalte darf nur Zahlen zwischen 61 und 75 (inklusive) enthalten");
             }
         }
-        if (card[2][2] != 0) {
+        if (card[2][2] != 0) { // prüt, ob die mitte gleich 0 ist
             throw new IllegalArgumentException("Der Eintrag in der Mitte muss gestrichen sein!");
         }
-        if (containsDuplicates(card)) {
+        if (containsDuplicates(card)) { // prüft nach Duplikaten
             throw new IllegalArgumentException("Die Bingo!-Karte darf keine Duplikate enthalten!");
         }
     }
 
-    public static boolean fillBingoCard(int[][] bingoCard, int number){
-        if (count == 0){
+    public static boolean fillBingoCard(int[][] bingoCard, int number){ // streicht die Nummern auf der Karte, falls richtig
+        if (count == 0){ // Gültigkeit der Karte wird einmal am Anfang geprüft
             checkBingoCard(bingoCard);
         }
         count++;
-        if(1>number || number>75){
+        if(1>number || number>75){ // Gültigkeit der gezogenen Nummer wird geprüft
             throw new IllegalArgumentException("Number darf nicht kleiner gleich 0 sein oder größer als 75 sein!");
             //return false;
         }
+        // streicht die Nummer auf der Karte, falls vorhanden
         for(int i = 0; i < 5; i++){
             for(int j = 0; j < 5; j++){
                 if(number == bingoCard[i][j]){
@@ -165,7 +168,7 @@ public class Bingo {
         return false;
     }
 
-    public static boolean bingo(int[][] bingoCard){
+    public static boolean bingo(int[][] bingoCard){ // prüft, ob es einen Bingo gibt
         for(int[] row : bingoCard){ // Prüft die Reihen nach einem Bingo
             int row_value = 0;
             for(int value : row){
