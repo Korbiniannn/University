@@ -6,35 +6,33 @@ public class Caesar{
   public final static String ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   public final static String EXAMPLE_KEY = "HAMNOGPQFEISTLJVWDXKCYZRBU";
 
-  public static String applyCaesar(String text, String key, String clear){
-    int n = text.length();
-    StringBuilder result = new StringBuilder();
-    for(int i = 0; i < n; i++){
-      for (int j = 0; j < clear.length(); j++){
-        if (text.charAt(i) == key.charAt(j)){
-          result.append(clear.charAt(j));
+  public static String applyCaesar(String text, String key, String clear){ //
+    StringBuilder result = new StringBuilder();// StringBuilder um die einzelnen Strings aneinander zu ketten
+    for(int i = 0; i < text.length(); i++){ // Loop um jeden Character im String text durchzugehen
+      for (int j = 0; j < key.length(); j++){ // Loop betrachtet jedes zeichen im String key für jedes Zeichen im String text
+        if (text.charAt(i) == key.charAt(j)){ //prüft ob, da Zeichen im String text am Index i gleich dem Zeichen im String key am Index j ist
+          result.append(clear.charAt(j)); // Falls ja, dann wird das Zeichen im String clear am Index j zum Ergebnis hinzugefügt
         }
       }
-      if(!key.contains(String.valueOf(text.charAt(i)))){
-        result.append(text.charAt(i));
+      if(!key.contains(String.valueOf(text.charAt(i)))){ // Falls String key das Zeichen aus String text nicht enthält
+        result.append(text.charAt(i)); // soll einfach das Zeichen aus String text zum Ergebnis hinzufügt werden
       }
     }
-    return result.toString();
+    return result.toString(); // ruft methode toString auf dem Ergebnis auf
   }
 
-  public static void printStatistics(String text){
-    int l = text.length();
-    int numLetters = 0;
-    int[] count = new int[26];
-    for(int i = 0; i < l; i++){
-      if(ABC.contains(String.valueOf(text.charAt(i)))){
-        numLetters++;
-        count[ABC.indexOf(text.charAt(i))]++;
+  public static void printStatistics(String text){ // Methode um die Wahrscheinlichkeiten jedes Zeichens wiederzugeben
+    int numLetters = 0; // Zahl aller Zeichen im String text zusammen
+    int[] count = new int[26]; // Counter für die einzelnen Zeichen
+    for(int i = 0; i < text.length(); i++){ // loop läuft jedes Zeichen im String text durch
+      if(ABC.contains(String.valueOf(text.charAt(i)))){ // If-Statement um Sonderzeichen und Leerzeichen zu filtern
+        numLetters++; // erhöht die Gesamtzahl aller Zeichen
+        count[ABC.indexOf(text.charAt(i))]++; // Erhöht den Wert um 1 an der Stelle vom Zeichen im Alphabet
       }
     }
-    for(int i = 0; i < 26; i++){
-      double percentage = count[i]/(double)numLetters*100;
-      System.out.println(ABC.charAt(i)+": "+percentage+"%");
+    for(int i = 0; i < 26; i++){ // läuft jede Stelle des Arrays count durch
+      double percentage = count[i]/(double)numLetters*100; // Erstellt den Prozentwert für das Zeichen an Stelle i
+      System.out.printf("%c: %.2f%%%n",ABC.charAt(i),percentage); // Printed das Zeichen mit der passenden prozentzahl
     }
 
 
