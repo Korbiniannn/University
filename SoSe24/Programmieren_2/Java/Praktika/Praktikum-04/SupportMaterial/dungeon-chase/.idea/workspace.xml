@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbe242e6-da18-445c-8047-6d33b22242f7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Praktika/2_Pandas_Dask/pandas.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../Data-Science-2/Praktika/2_Pandas_Dask/pandas.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Vorlesungen/2_Introduction_to_Pandas/2_Introduction_to_Pandas.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../Data-Science-2/Vorlesungen/2_Introduction_to_Pandas/2_Introduction_to_Pandas.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Praktikum-03/Prog2-Praktikum-03-Arrays und Strings/SupportMaterial/caesar/src/main/java/Caesar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Praktikum-03/Prog2-Praktikum-03-Arrays und Strings/SupportMaterial/caesar/src/main/java/Caesar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Praktika/2_Pandas_Dask/dask.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../Data-Science-2/Praktika/2_Pandas_Dask/dask.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Vorlesungen/3_Parallel_Processing_with_Dask.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../Data-Science-2/Vorlesungen/3_Parallel_Processing_with_Dask.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/DungeonChaseMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/DungeonChaseMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Helper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,34 +64,44 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2hSW31nCgvypTuPsYt02qZwAcoS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.dungeon-chase [run].executor": "Run",
-    "Gradle.dungeon-chase:app [:app:DungeonChaseStarter.main()].executor": "Run",
-    "Gradle.dungeon-chase:app [run].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/korbinianziegltrum/University/SoSe24/Programmieren_2/Java/Praktika/Praktikum-04/SupportMaterial/dungeon-chase",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.dungeon-chase [run].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.dungeon-chase:app [:app:DungeonChaseStarter.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.dungeon-chase:app [run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/korbinianziegltrum/University/SoSe24/Programmieren_2/Java/Praktika/Praktikum-04/SupportMaterial/dungeon-chase&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.dungeon-chase:app [run]">
     <configuration name="DungeonChaseStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dungeonchase.DungeonChaseStarter" />
@@ -157,8 +171,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
       </set>
     </attachedChunks>
   </component>
@@ -171,6 +185,8 @@
       <option name="presentableId" value="Default" />
       <updated>1717587755535</updated>
       <workItem from="1717587756575" duration="4855000" />
+      <workItem from="1718541142573" duration="89000" />
+      <workItem from="1718541260234" duration="20946000" />
     </task>
     <servers />
   </component>

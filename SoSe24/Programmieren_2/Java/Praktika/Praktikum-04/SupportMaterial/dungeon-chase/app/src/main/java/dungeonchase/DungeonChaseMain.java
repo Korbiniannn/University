@@ -85,7 +85,7 @@ public class DungeonChaseMain extends Application {
 
       receiveInput = false;
 
-      /* ### updatePlayer 
+      //updatePlayer
       Direction movement = 
         switch (keyEvent.getCode()){
           case W, UP -> Direction.NORTH;
@@ -99,7 +99,7 @@ public class DungeonChaseMain extends Application {
       if (movement == Direction.NONE)
         return;
 
-      grid.updatePlayer(movement);*/
+      grid.updatePlayer(movement);
       drawGrid();
 
       timer.schedule(
@@ -166,13 +166,12 @@ public class DungeonChaseMain extends Application {
             Image image = loadImage(String.format("floor-%02d.png", floorId));
             g.drawImage(image, screenX, screenY);
 
-            /* ### Character
+            //Character
             Character character = grid.get(x,y); 
             if (character != null){
               image = loadImage(character.getImage());
               g.drawImage(image, screenX, screenY);
-            } 
-            */
+            }
 
 
 
