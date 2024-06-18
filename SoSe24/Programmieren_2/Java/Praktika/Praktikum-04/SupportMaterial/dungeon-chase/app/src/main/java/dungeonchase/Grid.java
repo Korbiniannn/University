@@ -16,7 +16,7 @@ public class Grid {
   private int currentIteration;
 
 
-  // private TreasureChest treasureChest; // ### TreasureChest
+  private TreasureChest treasureChest; // ### TreasureChest
 
   public Grid(){
     currentIteration = 0;
@@ -28,11 +28,11 @@ public class Grid {
   private void initGrid(){
     // Character
     grid = Helper.fillGrid(
-        30  // Anzahl der zu erzeugenden Gegner
-        // , () -> new Ogre(Helper.generateName("Ogre"))          // ### Ogre
-        // , () -> new Wall()                                     // ### Wall
-        // , () -> new BlackKnight(Helper.generateName("Knight")) // ### BlackKnight
-        // , () -> new Bomb()                                     // ### Bomb
+        10, // Anzahl der zu erzeugenden Gegner
+          () -> new Ogre(Helper.generateName("Ogre"))          // ### Ogre
+        , () -> new Wall()                                     // ### Wall
+        , () -> new BlackKnight(Helper.generateName("Knight")) // ### BlackKnight
+        , () -> new Bomb()                                     // ### Bomb
         // , () -> new Bat(Helper.generateName("Bat"))            // ### Bat
         // , () -> new Blob(Helper.generateName("Blob"), 0.05)    // ### Blob
         // , () -> new Fire(0.1)                                  // ### Fire
@@ -44,10 +44,10 @@ public class Grid {
     player = new Player();
     grid[playerX][playerY] = player;
 
-    /* ### TreasureChest 
+    //TreasureChest
     treasureChest = new TreasureChest();
     grid[GRID_WIDTH-2][GRID_HEIGHT/2] = treasureChest;
-    */
+
 
   }
 
@@ -65,11 +65,11 @@ public class Grid {
     return playerY;
   }
 
-  /* ### TrasureChest
+  // TrasureChest
   public TreasureChest getTreasureChest(){
     return treasureChest;
   }
-  */
+
 
   //Character
   public Character get(int x, int y){
@@ -104,12 +104,42 @@ public class Grid {
 
           playerX = destinationX;
           playerY = destinationY;
-      }
+        }
       }
     }
+  }
 
+  public void updateOthers(Direction playerMovement) {
+    currentIteration++;
 
+    for (int x = 0; x < GRID_WIDTH; x++) {
+      for (int y = 0; y < GRID_HEIGHT; y++) {
+        Character character = grid[x][y];
 
+        if (character == null || character == player || character.getLastUpdate() == currentIteration) {
+          continue;
+        }
 
-}
+        character.setLastUpdate(currentIteration);
+        Direction movement = character.update(this, x, y, playerMovement);
+
+        int destinationX = x + movement.getDx();
+        int destinationY = y + movement.getDy();
+
+        if ((destinationX >= 0 && destinationX < GRID_WIDTH) && (destinationY >= 0 && destinationY < GRID_HEIGHT)) {
+          if (grid[destinationX][destinationY] == null) {
+            grid[x][y] = null;
+            grid[destinationX][destinationY] = character;
+          } else if (grid[destinationX][destinationY].collisionFrom(character)) {
+            grid[x][y] = null;
+            grid[destinationX][destinationY] = character;
+          }
+        }
+
+        if (!character.isAlive()) {
+          grid[x][y] = null;
+        }
+      }
+    }
+  }
 }

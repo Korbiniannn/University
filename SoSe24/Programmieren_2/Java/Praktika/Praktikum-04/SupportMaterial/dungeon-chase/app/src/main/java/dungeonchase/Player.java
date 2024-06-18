@@ -2,6 +2,10 @@ package dungeonchase;
 
 public class Player extends Character{
 
+    Player() {
+        super("player");
+    }
+
     @Override
     public String getImage() {
         return "player.png";

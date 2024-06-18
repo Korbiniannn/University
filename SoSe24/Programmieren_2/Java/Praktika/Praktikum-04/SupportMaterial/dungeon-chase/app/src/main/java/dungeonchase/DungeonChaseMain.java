@@ -108,7 +108,7 @@ public class DungeonChaseMain extends Application {
             public void run(){
 
               
-              // grid.updateOthers(movement); // ### updateOthers
+              grid.updateOthers(movement); // ### updateOthers
 
               drawGrid();
               receiveInput = true;
@@ -121,11 +121,11 @@ public class DungeonChaseMain extends Application {
 
     private void checkGameFinished(){
       Alert alert = null;
-      /* ### TreasureChest 
+      //TreasureChest
       if (!grid.getTreasureChest().isAlive()){
         alert = new Alert(AlertType.INFORMATION, "YOU WON!");
-      } else */
-      /* ### updateOthers 
+      } else
+      // updateOthers
       if (!grid.getPlayer().isAlive()){
         Character killer = grid.get(grid.getPlayerX(),grid.getPlayerY());
         alert = new Alert(AlertType.INFORMATION, "YOU DIED! You have been killed by " + (killer == null ? " unknown" : killer.getName() + "!"));
@@ -134,7 +134,7 @@ public class DungeonChaseMain extends Application {
 
       alert.showAndWait();
       Platform.exit();
-      System.exit(0);*/
+      System.exit(0);
     }
 
 

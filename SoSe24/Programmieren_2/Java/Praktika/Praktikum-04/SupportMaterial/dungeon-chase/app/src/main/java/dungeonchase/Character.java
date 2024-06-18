@@ -6,7 +6,7 @@ public abstract class Character {
     boolean alive;
     int lastUpdate;
 
-    public void Character(String name){
+    Character(String name){
         if(name == "" || name == null){
             throw new IllegalArgumentException("name darf nicht leer oder null sein");
         }
@@ -20,7 +20,7 @@ public abstract class Character {
         return name;
     }
 
-    public boolean getAlive(){
+    public boolean isAlive(){
         return alive;
     }
 
@@ -40,7 +40,10 @@ public abstract class Character {
     public abstract Direction update(Grid grid, int x, int y, Direction playerMovement);
 
     public boolean collisionFrom(Character other) {
-        this.alive = false;
-        return true;
+        if (other != null && other != this){
+            setAlive(false);
+            return true;
+        }
+        return false;
     }
 }
