@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="dbe242e6-da18-445c-8047-6d33b22242f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Bomb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Ogre.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Ogre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Wall.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +192,8 @@
       <workItem from="1718647352886" duration="56000" />
       <workItem from="1718647419175" duration="19713000" />
       <workItem from="1718723496831" duration="5387000" />
-      <workItem from="1718732831685" duration="1686000" />
+      <workItem from="1718732831685" duration="8166000" />
+      <workItem from="1718910272525" duration="10986000" />
     </task>
     <servers />
   </component>
