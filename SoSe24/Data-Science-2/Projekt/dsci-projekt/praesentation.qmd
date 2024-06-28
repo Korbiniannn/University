@@ -1,0 +1,125 @@
+---
+title: "Die deutschen Wahlen"
+format: revealjs
+---
+
+# Inhalt
+
+- Bundeswahlen 1949 bis 2021
+- Europawahlen 1979 bis 2024
+- Bundesländer rechts/links Verteilung
+
+
+<div style="text-align: center;">
+
+## Bundeswahlergebnis 
+#### 1949 / 1957
+
+</div>
+
+---
+
+![Ergebnis der Analyse](./Visualisierungen/Bundeswahlen_1957_1949.png)
+
+
+
+<div style="text-align: center;">
+
+## Bundeswahlergebnis 
+#### 1980 / 1987
+
+</div>
+
+---
+
+![Ergebnis der Analyse](./Visualisierungen/Bundeswahlen_1987_1980.png)
+
+
+<div style="text-align: center;">
+
+## Bundeswahlergebnis 
+#### 1994 / 1998
+
+</div>
+
+---
+
+![Ergebnis der Analyse](./Visualisierungen/Bundeswahlen_1998_1994.png)
+
+
+
+<div style="text-align: center;">
+
+## Bundeswahlergebnis 
+#### 2002 / 2009
+
+</div>
+
+---
+
+![Ergebnis der Analyse](./Visualisierungen/Bundeswahlen_2009_2002.png)
+
+
+
+<div style="text-align: center;">
+
+## Bundeswahlergebnis 
+#### 2013 / 2017
+
+</div>
+
+---
+
+![Ergebnis der Analyse](./Visualisierungen/Bundeswahlen_2017_2013.png)
+
+
+<div style="text-align: center;">
+
+## Bundeswahlergebnis 
+#### 2017 / 2021
+
+</div>
+
+---
+
+![Ergebnis der Analyse](./Visualisierungen/Bundeswahlen_2021_2017.png)
+
+
+<div style="text-align: center;">
+
+## Europawahlen
+#### seit 1979 bis 2024
+
+</div>
+
+---
+
+<iframe src="./Visualisierungen/Stimmverteilung_nach_Partei_alle.html" width="100%" height="500"></iframe>
+
+---
+
+<iframe src="./Visualisierungen/Stimmverteilung_nach_Partei_main.html" width="100%" height="500"></iframe>
+
+
+
+<div style="text-align: center;">
+
+## Bundeswahlen
+#### rechts / links Verteilung
+
+</div>
+
+---
+
+![Ergebnis der Analyse](./Visualisierungen/2013Bubbleplot.png)
+
+---
+
+![Ergebnis der Analyse](./Visualisierungen/2021Bubbleplot.png)
+
+
+<div style="text-align: center;">
+
+# Vielen Dank für ihre Aufmerksamkeit
+
+</div>
