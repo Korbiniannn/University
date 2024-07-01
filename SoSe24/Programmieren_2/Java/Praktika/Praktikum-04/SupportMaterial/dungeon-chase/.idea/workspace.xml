@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dbe242e6-da18-445c-8047-6d33b22242f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/BlackKnight.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/BlackKnight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Blob.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Blob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Replicable.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Replicable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/TreasureChest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/TreasureChest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,8 +171,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
@@ -188,6 +193,8 @@
       <workItem from="1718732831685" duration="8166000" />
       <workItem from="1718910272525" duration="10986000" />
       <workItem from="1718959184962" duration="449000" />
+      <workItem from="1719855340198" duration="43000" />
+      <workItem from="1719855412826" duration="1164000" />
     </task>
     <servers />
   </component>

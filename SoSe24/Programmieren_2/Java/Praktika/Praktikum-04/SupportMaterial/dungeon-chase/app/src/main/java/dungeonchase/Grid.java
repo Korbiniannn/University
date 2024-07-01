@@ -117,6 +117,8 @@ public class Grid {
 
   /**
    * bewegt alle anderen Charaktere
+   * unterscheidet zwischen replizierbaren und nicht replizierbaren Charakteren
+   * und filtert tote, bereits aktualisierte, den Player, leere Felder und Charaktere, die sich nicht bewegen aus
    * @param playerMovement Bewegung des Spielers
    */
   public void updateOthers(Direction playerMovement) {
