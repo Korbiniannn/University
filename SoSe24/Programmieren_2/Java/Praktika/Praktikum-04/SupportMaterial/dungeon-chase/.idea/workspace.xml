@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbe242e6-da18-445c-8047-6d33b22242f7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/bubbleplot.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/data-frames.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/data-frames.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/hdata1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/hdata1949.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/hdata2013.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/scraping.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/BlackKnight.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/BlackKnight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Blob.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Blob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Replicable.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/Replicable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/dungeonchase/TreasureChest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/dungeonchase/TreasureChest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +195,9 @@
       <workItem from="1718910272525" duration="10986000" />
       <workItem from="1718959184962" duration="449000" />
       <workItem from="1719855340198" duration="43000" />
-      <workItem from="1719855412826" duration="1164000" />
+      <workItem from="1719855412826" duration="1527000" />
+      <workItem from="1719902799399" duration="2502000" />
+      <workItem from="1720363575194" duration="336000" />
     </task>
     <servers />
   </component>
