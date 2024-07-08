@@ -2,7 +2,7 @@ package potionbrewery;
 
 import java.util.Objects;
 
-public abstract class BreweryItem {
+public abstract class BreweryItem implements Comparable<BreweryItem>{
 
   private final String name;
   private final int value;
@@ -63,7 +63,18 @@ public abstract class BreweryItem {
         this.value);
   }
 
+  @Override
+  public int compareTo(BreweryItem other){
+    if(other == null)
+      throw new IllegalArgumentException("Other cannot be null");
 
+    int result = this.name.compareTo(other.name);
+
+    if(result == 0)
+      result = this.value - other.value;
+
+    return result;
+  }
 
 
 }

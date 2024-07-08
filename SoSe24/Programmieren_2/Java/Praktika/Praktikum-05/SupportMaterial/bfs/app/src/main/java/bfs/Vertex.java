@@ -1,6 +1,10 @@
 package bfs;
 
-public class Vertex  {
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class Vertex implements Iterable<Vertex> {
 
   private int value;
 
@@ -26,5 +30,9 @@ public class Vertex  {
     return right;
   }
 
+  @Override
+  public Iterator<Vertex> iterator(){
+    return new VertexIterator(new LinkedList<Vertex>(), this);
+  }
 
 }

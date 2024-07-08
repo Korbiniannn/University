@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class BreweryTest{
-  /*
+
   private Ingredient iceCube;
   private Ingredient fireMatch;
   private Ingredient tapWater;
@@ -86,9 +86,9 @@ public class BreweryTest{
         UnsupportedOperationException.class,
         () -> items.add(unicornHair));
 
-  }*/
+  }
 
-  /*
+
   @Test
   public void testContains(){
 
@@ -102,9 +102,9 @@ public class BreweryTest{
         IllegalArgumentException.class,
         () -> brewery.contains(null));
 
-  }*/
+  }
 
-  /*
+
   @Test
   public void testRemove(){
 
@@ -123,9 +123,9 @@ public class BreweryTest{
         BreweryException.class,
         () -> brewery.remove(kugelschreibär));
 
-  }*/
+  }
 
-  /*
+
   @Test
   public void testBrew(){
 
@@ -165,9 +165,9 @@ public class BreweryTest{
           BreweryException.class,
           () -> brewery.brew(capri, birdsEyeChili, kugelschreibär));
 
-  }*/
+  }
 
-  /*
+
   @Test
   public void testSortedItems(){
 
@@ -179,9 +179,9 @@ public class BreweryTest{
 
     assertEquals("sorted list is not equal to expected sorted list",
         expected, items);
-  }*/
+  }
 
-  /*
+
   @Test
   public void testGetIngredients(){
 
@@ -210,9 +210,9 @@ public class BreweryTest{
       assertTrue("ingredient is missing", ingredients.contains(unmatchedOpeningParenthesis));
       assertFalse("capri is not in brewery", ingredients.contains(capri));
 
-  }*/
+  }
 
-  /*
+
   @Test
   public void testSortedIngredients(){
 
@@ -235,9 +235,9 @@ public class BreweryTest{
       potion = brewery.brew(springWater, unmatchedOpeningParenthesis, springWater);
 
       assertEquals("total value must be 160", 160, brewery.getTotalValue());
-  }*/
+  }
 
-  /*
+
   @Test
   public void testGetMostValuablePotion(){
     assertNull("most valuable potion is null when no potion is available", brewery.getMostValuablePotion());
@@ -252,9 +252,9 @@ public class BreweryTest{
         new Potion(northpoleSnowflake, unicornHair, capri),
         brewery.getMostValuablePotion());
 
-  }*/
+  }
 
-  /*
+
   @Test
   public void testGetInventory(){
       brewery.remove(unicornHair);
@@ -286,6 +286,6 @@ public class BreweryTest{
 
       assertEquals("map must match expected map", expected, m);
 
-  }*/
+  }
 
 }

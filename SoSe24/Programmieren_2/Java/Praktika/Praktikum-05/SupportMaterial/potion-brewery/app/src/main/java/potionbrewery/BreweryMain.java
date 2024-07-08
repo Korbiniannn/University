@@ -1,8 +1,10 @@
 package potionbrewery;
 
+import java.util.Iterator;
+
 public class BreweryMain {
 
-  /* ### Brewery
+  //Brewery
   private static Ingredient iceCube;
   private static Ingredient fireMatch;
   private static Ingredient tapWater;
@@ -33,40 +35,63 @@ public class BreweryMain {
     }
 
   }
-  */
 
   public static void main(String[] args){
 
-    // TODO fillWithIngredients
+    Brewery brewery = new Brewery();
+    fillWithIngredients(brewery);
 
     printHeader("printBrewery");
-    // TODO printBrewery
+    printBrewery(brewery);
 
     printHeader("contains");
-    // TODO contains
+    System.out.println(brewery.contains(unicornHair));
+    Ingredient kugelschreibär = new Ingredient("Kugelschreibär", 1, "Screaming", 1);
+    System.out.println(brewery.contains(kugelschreibär));
+    Ingredient unicornHairClone = unicornHair;
+    System.out.println(brewery.contains(unicornHairClone));
 
     printHeader("remove");
-    // TODO remove
+    brewery.remove(unicornHair);
+    printBrewery(brewery);
+    try {
+      brewery.remove(kugelschreibär);
+    }catch (BreweryException e){
+      System.out.println(e.getMessage());
+    }
 
 
     printHeader("brew");
-    // TODO brew
+    brewery.brew(booger, capri, birdsEyeChili);
+    brewery.brew(northpoleSnowflake, unicornHair, capri);
+    brewery.brew(springWater, unmatchedOpeningParenthesis, springWater);
+    brewery.brew(booger, capri, birdsEyeChili);
+
+    printBrewery(brewery);
 
     printHeader("sortedItems");
-    // TODO sortedItems
+    brewery.sortedItems();
+    printBrewery(brewery);
 
     printHeader("sortedIngredients");
-    // TODO sortedIngredients
+    System.out.println(brewery.sortedIngredients());
 
     printHeader("getTotalValue");
-    // TODO getTotalValue
+    System.out.println(brewery.getTotalValue());
 
     printHeader("getMostValuablePotion");
-    // TODO getMaxValuablePotion
+    System.out.println(brewery.getMostValuablePotion());
 
     printHeader("getInventory");
-    // TODO getInventory
+    System.out.println(brewery.getInventory());
 
+
+  }
+
+  private static void printBrewery(Brewery brewery){
+    for(BreweryItem item : brewery.getItems()){
+      System.out.println(item.toString());
+    }
 
   }
 
