@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbe242e6-da18-445c-8047-6d33b22242f7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/bubbleplot.ipynb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/data-frames.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/data-frames.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/hdata1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/hdata1949.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/hdata2013.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../../Data-Science-2/Projekt/scraping.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../Mathematik-2/Praktika/Übung No.01.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../Mathematik-2/Praktika/Übung No.01.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Praktikum-01/Code-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Praktikum-01/Code-01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Praktikum-05/SupportMaterial/potion-brewery/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Praktikum-05/SupportMaterial/potion-brewery/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Praktikum-05/SupportMaterial/potion-brewery/app/src/main/java/potionbrewery/BreweryItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Praktikum-05/SupportMaterial/potion-brewery/app/src/main/java/potionbrewery/BreweryItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +197,7 @@
       <workItem from="1719855412826" duration="1527000" />
       <workItem from="1719902799399" duration="2502000" />
       <workItem from="1720363575194" duration="336000" />
+      <workItem from="1720603546540" duration="3354000" />
     </task>
     <servers />
   </component>

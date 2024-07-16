@@ -1,6 +1,7 @@
 package potionbrewery;
 
 import java.util.Objects;
+import java.util.TreeSet;
 
 public abstract class BreweryItem implements Comparable<BreweryItem>{
 
