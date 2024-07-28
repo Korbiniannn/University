@@ -52,7 +52,7 @@ public class DungeonChaseMain extends Application {
       Pane root = new Pane();
       grid = new Grid();
 
-      gridCanvas = new Canvas(Grid.GRID_WIDTH*TILE_SIZE,Grid.GRID_HEIGHT*TILE_SIZE);
+      gridCanvas = new Canvas(Grid.GRID_WIDTH*(double)TILE_SIZE,Grid.GRID_HEIGHT*(double)TILE_SIZE);
       root.getChildren().add(gridCanvas);
       
       //Creating a scene object 
@@ -138,7 +138,7 @@ public class DungeonChaseMain extends Application {
     }
 
 
-    private Image loadImage(String path) throws FileNotFoundException, IOException{
+    private Image loadImage(String path) throws IOException{
 
       if (tileCache.containsKey(path))
         return tileCache.get(path);
@@ -156,7 +156,7 @@ public class DungeonChaseMain extends Application {
       Random random = new Random(123);
       for (int x = 0; x < Grid.GRID_WIDTH; x++){
         for (int y = 0; y < Grid.GRID_HEIGHT; y++){
-          double screenX = x * TILE_SIZE;
+          double screenX = x * (double)TILE_SIZE;
           double screenY = gridCanvas.getHeight()-(y+1) * TILE_SIZE;
 
           int floorId = Math.abs(random.nextInt())%4;
