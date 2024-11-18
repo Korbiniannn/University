@@ -1,0 +1,32 @@
+- How does finding corresponding points between image pairs contribute to 3D depth inference?
+Insgesamt hilft das Finden der Korrespondenzpunkte  dabei, die 3D-Struktur einer Szene zu rekonstruieren, indem die Tiefeninformationen aus den unterschiedlichen Blickwinkeln extrahiert werden.
+Themen zum genauer ansehen: Epipolare Geometrie, Disparität und Tiefenberechnung, Tiefenkarte erstellen
+
+- Differentiate between sparse correspondence and dense correspondence in image matching.
+Die sparsame Korrespondenz ist schneller und weniger rechenaufwendig, liefert aber nur punktuelle Informationen, während die dichte Korrespondenz detaillierte, flächendeckende Informationen bietet, jedoch deutlich mehr Rechenleistung erfordert.
+
+- What image characteristics define a “corner” as an easy-to-match feature?
+Hohe Intensitätsänderung in mehreren Richtungen: Ecken treten dort auf, wo es in horizontaler und vertikaler Richtung deutliche Intensitäts- oder Farbänderungen gibt. Dieser starke Gradient in mehreren Richtungen lässt die Ecke im Bild hervortreten.
+
+Lokal eindeutige Struktur: Ein Eckpunkt ist lokal einzigartig und schwer zu verwechseln, da er sich durch seine Umgebung deutlich unterscheidet. Dadurch können Algorithmen ihn zuverlässig erkennen und wiederfinden.
+
+Stabilität bei Bildveränderungen: Ecken bleiben auch bei Änderungen der Perspektive, Beleuchtung oder Skalierung häufig erkennbar. Dies macht sie besonders geeignet für Bildzuordnungen.
+
+Hohe Texturvielfalt: Bereiche mit Ecken enthalten oft eine hohe Dichte an Texturinformationen, was sie von anderen Bereichen abhebt.
+
+- Describe the characteristics of an image patch that make it “easy to match” using the concept of the Sum of Squared Differences (SSD) error.
+Ein Patch mit gutem Kontrast, komplexer Textur und variierenden Intensitäten erleichtert die Zuordnung durch den SSD-Fehler, da solche Patches in der Regel einen niedrigeren Fehlerwert mit ihren entsprechenden Matches haben
+
+- In the mathematical formulation of cornerness, what does the expression E(u,v) represent, and what role do u and v play?
+E(u,v) misst die Intensitätsänderung bei einer Verschiebung(u,v), wobei "u" und "v" die Verschiebungen in den horizontalen (x-) und vertikalen (y-) Richtungen darstellt und hilft dabei, zwischen Ecken, Kanten und homogenen Bereichen zu unterscheiden.
+
+- 
+
+
+
+
+
+
+
+
+
