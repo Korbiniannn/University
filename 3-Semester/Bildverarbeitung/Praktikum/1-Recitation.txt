@@ -1,7 +1,0 @@
-1. What is the difference between convolution and correlation? Give the correct formulae for the 2d case?
-
-	1. Korrelation (Correlation):
-
-	- Die Korrelation ist ein Maß dafür, wie ähnlich zwei Funktionen oder Matrizen sind.
-	- Dabei wird das Filter (Kernel) über das Bild geschoben, und in jedem Schritt berechnet man das 	  Skalarprodukt zwischen dem Kernel und dem entsprechenden Bildausschnitt.
-	(f∗g)(i,j)= m∑n∑f(m,n)⋅g(i+m,j+n)
