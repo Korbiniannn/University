@@ -50,8 +50,16 @@ class HybridImageModel(nn.Module):
     ############################
     ### TODO: YOUR CODE HERE ###
 
-    raise NotImplementedError('`get_kernel` function in `models.py` needs ' +
-      'to be implemented')
+    gaussian_kernel = create_Gaussian_kernel(cutoff_frequency)  # numpy array of shape (k, k)
+
+    # Umwandlung in 4D-Form mit np.reshape()
+    k = gaussian_kernel.shape[0]
+    gaussian_kernel = np.reshape(gaussian_kernel, (1, 1, k, k))  # (1, 1, k, k)
+
+    # Wiederhole den Kernel für alle Kanäle
+    gaussian_kernel = np.tile(gaussian_kernel, (self.n_channels, 1, 1, 1))  # (c, 1, k, k)
+    
+    kernel = torch.tensor(gaussian_kernel, dtype=torch.foat32)
 
     ### END OF STUDENT CODE ####
     ############################
@@ -80,8 +88,22 @@ class HybridImageModel(nn.Module):
     ############################
     ### TODO: YOUR CODE HERE ###
 
-    raise NotImplementedError('`low_pass` function in `models.py` needs to '
-      + 'be implemented')
+    if kernel.ndim != 2:
+        raise ValueError("Kernel must be a 2D tensor")
+
+    # Kernel auf die richtige Form bringen: (out_channels, in_channels/groups, kH, kW)
+    kernel = kernel.unsqueeze(0).unsqueeze(0)  # Form: (1, 1, kH, kW)
+    kernel = kernel.repeat(self.n_channels, 1, 1, 1)  # Form: (c, 1, kH, kW)
+
+    # Padding berechnen
+    pad_h = kernel.shape[2] // 2  # Höhe des Kernels
+    pad_w = kernel.shape[3] // 2  # Breite des Kernels
+    padding = (pad_w, pad_w, pad_h, pad_h)  # (links, rechts, oben, unten)
+
+    # Convolution anwenden
+    filtered_image = F.conv2d(
+        x, kernel, padding=padding, groups=self.n_channels
+    )
 
     ### END OF STUDENT CODE ####
     ############################
@@ -118,8 +140,27 @@ class HybridImageModel(nn.Module):
     ############################
     ### TODO: YOUR CODE HERE ###
 
-    raise NotImplementedError('`forward` function in `models.py` needs to '
-      + 'be implemented')
+    # Erzeuge den Low-Pass-Filter für jede Cutoff-Frequenz
+    kernel = self.get_kernel(cutoff_frequency)
+
+    if isinstance(kernel, np.ndarray):
+      kernel = torch.tensor(kernel, dtype=torch.float32)
+
+    # Low-Frequencies von image1
+    low_frequencies = self.low_pass(image1, kernel)
+
+    # Low-Frequencies von image2
+    low_frequencies_image2 = self.low_pass(image2, kernel)
+
+    # High-Frequencies von image2
+    high_frequencies = image2 - low_frequencies_image2
+
+    # Hybrid-Bild erstellen
+    hybrid_image = low_frequencies + high_frequencies
+
+    # Clipping, um Werte zwischen 0 und 1 zu begrenzen
+    hybrid_image = torch.clamp(hybrid_image, 0, 1)
+
 
     ### END OF STUDENT CODE ####
     ############################

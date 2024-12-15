@@ -34,8 +34,16 @@ def make_dataset(path: str) -> Tuple[List[str],List[str]]:
   ############################
   ### TODO: YOUR CODE HERE ###
 
-  raise NotImplementedError('`make_dataset` function in `datasets.py` needs '
-    + 'to be implemented')
+  all_images = sorted(os.listdir(path))
+
+  images_a = []
+  images_b = []
+
+  for i, image in enumerate(all_images):
+    if i % 2 == 0:
+      images_a.append(os.path.join(path, image))
+    else:
+      images_b.append(os.path.join(path, image))
 
   ### END OF STUDENT CODE ####
   ############################
@@ -61,8 +69,12 @@ def get_cutoff_frequencies(path: str) -> List[int]:
   ############################
   ### TODO: YOUR CODE HERE ###
 
-  raise NotImplementedError('`get_cutoff_frequencies` function in '
-    + '`datasets.py` needs to be implemented')
+  with open(path, 'r') as file:
+        lines = file.readlines()
+
+    # Entferne Whitespaces und konvertiere die Zeilen in Integer
+  cutoff_frequencies = [int(line.strip()) for line in lines if line.strip().isdigit()]
+    
 
   ### END OF STUDENT CODE ####
   ############################
@@ -91,12 +103,13 @@ class HybridImageDataset(data.Dataset):
     images_a, images_b = make_dataset(image_dir)
     cutoff_frequencies = get_cutoff_frequencies(cf_file)
 
-    self.transform = None
+    
     ############################
     ### TODO: YOUR CODE HERE ###
 
-    raise NotImplementedError('`self.transform` function in `datasets.py` needs to '
-      + 'be implemented')
+    self.transform = transforms.Compose([
+            transforms.ToTensor(),  # Wandelt PIL-Bilder in Torch.Tensor um
+          ])
 
     ### END OF STUDENT CODE ####
     ############################
@@ -107,12 +120,10 @@ class HybridImageDataset(data.Dataset):
 
   def __len__(self) -> int:
     """Returns number of pairs of images in dataset."""
-
     ############################
     ### TODO: YOUR CODE HERE ###
 
-    raise NotImplementedError('`__len__` function in `datasets.py` needs to '
-      + 'be implemented')
+    return len(self.images_a)
 
     ### END OF STUDENT CODE ####
     ############################
@@ -144,8 +155,16 @@ class HybridImageDataset(data.Dataset):
     ############################
     ### TODO: YOUR CODE HERE ###
 
-    raise NotImplementedError('`__getitem__ function in `datasets.py` needs '
-      + 'to be implemented')
+    from PIL import Image
+    image_a = Image.open(self.images_a[idx]).convert("RGB")
+    image_b = Image.open(self.images_b[idx]).convert("RGB")
+        
+    # Transformiere die Bilder in Torch-Tensoren
+    image_a = self.transform(image_a)
+    image_b = self.transform(image_b)
+        
+    # Hole die zugehörige Cutoff-Frequenz
+    cutoff_frequency = self.cutoff_frequencies[idx]
 
     ### END OF STUDENT CODE ####
     ############################

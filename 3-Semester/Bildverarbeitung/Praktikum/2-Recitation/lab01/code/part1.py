@@ -29,8 +29,17 @@ def create_Gaussian_kernel(cutoff_frequency):
   ############################
   ### TODO: YOUR CODE HERE ###
 
-  raise NotImplementedError('`create_Gaussian_kernel` function in '
-    + '`student_code.py` needs to be implemented')
+  k = cutoff_frequency * 4 + 1
+  mean = k // 2
+  sigma = cutoff_frequency
+
+  x = np.arange(0, k)
+  gaussian_1d = (1 / (np.sqrt(2*np.pi) * sigma)) * np.exp(-(1/(2*sigma**2))*((x - mean)**2))
+
+  kernel = np.outer(gaussian_1d, gaussian_1d)
+
+  kernel /= kernel.sum()
+  
 
   ### END OF STUDENT CODE ####
   ############################
@@ -63,8 +72,32 @@ def my_imfilter(image, filter):
   ############################
   ### TODO: YOUR CODE HERE ###
 
-  raise NotImplementedError('`my_imfilter` function in `student_code.py` ' +
-    'needs to be implemented')
+  fH, fW = filter.shape
+
+  pad_h = fH // 2
+  pad_W = fW // 2
+
+  if image.ndim == 2:
+    padded_image = np.pad(image, ((pad_h, pad_h), (pad_W, pad_W)), mode='reflect')
+  elif image.ndim == 3:
+    padded_image = np.pad(image, ((pad_h, pad_h), (pad_W, pad_W), (0, 0)), mode='reflect')
+  
+
+  filtered_image = np.zeros_like(image)
+
+  for i in range(image.shape[0]):  # Höhe
+        for j in range(image.shape[1]):  # Breite
+            if image.ndim == 2:  # Graustufen
+                # Region des gepaddeten Bildes
+                region = padded_image[i:i + fH, j:j + fW]
+                # Pixelwert berechnen
+                filtered_image[i, j] = np.sum(region * filter)
+            elif image.ndim == 3:  # Farbbild
+                for c in range(image.shape[2]):  # Farbkanäle
+                    # Region des gepaddeten Bildes für jeden Kanal
+                    region = padded_image[i:i + fH, j:j + fW, c]
+                    # Pixelwert berechnen
+                    filtered_image[i, j, c] = np.sum(region * filter)
 
   ### END OF STUDENT CODE ####
   ############################
@@ -107,8 +140,15 @@ def create_hybrid_image(image1, image2, filter):
   ############################
   ### TODO: YOUR CODE HERE ###
 
-  raise NotImplementedError('`create_hybrid_image` function in ' +
-    '`student_code.py` needs to be implemented')
+  low_frequencies = my_imfilter(image1, filter)
+
+  low_frequencies_im02 = my_imfilter(image2, filter)
+
+  high_frequencies = image2 - low_frequencies_im02
+
+  hybrid_image = low_frequencies + high_frequencies
+
+  hybrid_image = np.clip(hybrid_image, 0, 1)
 
   ### END OF STUDENT CODE ####
   ############################
