@@ -1,0 +1,108 @@
+/*
+  Kasino-Anwendung als Beispiel für Schwächen durch niedrige Entropie
+  Johann Uhrmann, 2020
+*/
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <time.h>
+#include <fcntl.h>
+#include <signal.h>
+
+void writeIntro();
+void gamble();
+int nextrand();
+unsigned int readNumber(const char * prompt);
+void timeout(int signal);
+
+int main() {
+  fflush(stdin);
+  srand(time(NULL));
+  writeIntro();
+  signal(SIGALRM, timeout);
+  alarm(3600);
+  gamble();
+  return 0;
+}
+
+void writeIntro() {
+  printf("=============================================================\n");
+  printf("WILLKOMMEN IM CASINO\n");
+  printf("=============================================================\n");
+  printf("\nAnleitung:\n");
+  printf("Sie erhalten ein Startguthaben von 5 Coins.\n");
+  printf("In jeder Runde können Sie Ihre Coins setzen und müssen eine Zahl zwischen 0 und 255 erraten.\n");
+  printf("Raten Sie richtig, dann erhalten Sie Ihren Einsatz doppelt zurück.\n");
+  printf("\n\nAufgabe: Sprengen Sie die Bank und kassieren Sie 1000000 Coins!\n");
+  printf("\n");
+}
+
+void gamble() {
+  unsigned int coins = 5;
+  unsigned int bet;
+  unsigned int guess;
+  unsigned char rand;
+  
+  while(coins < 1000000) {
+    do {
+      printf("\nSie haben %u Coins.\n", coins);
+      bet = readNumber("Ihr Einsatz: ");
+    } while (bet > coins);
+
+    guess = readNumber("Ihre Zahl: ");
+
+    rand = nextrand();
+    if (rand == guess) {
+      printf("SIE HABEN GEWONNEN!\n");
+      coins += bet;
+    } else {
+      printf("Leider verloren, es wäre die %d gewesen.\n", (unsigned int)rand);
+      coins -= bet;
+    }
+
+    if (coins == 0) {
+      printf("Sie haben keine Coins mehr. Auf Wiedersehen!\n");
+      return;
+    }
+  }
+
+  printf("Sie haben die Bank gesprengt!\n");
+}
+  
+/*
+  Schlecht implementierter Zufallszahlengenerator mit niedriger Entropie
+ */
+int nextrand() {
+  return rand() & 0xff;
+}
+
+
+unsigned int readNumber(const char * prompt) {
+  char buffer[256];
+  int i;
+  unsigned int input;
+  
+  do {
+    printf("%s", prompt);
+    fflush(stdout);
+    fgets(buffer,255,stdin);
+
+    for(i=0; i<255; ++i) {
+      if (buffer[i] < '0') continue;
+      if (buffer[i] > '9') continue;
+      if (buffer[i] == '\n') break;
+
+      sscanf(&buffer[i], "%ud", &input);
+      return input;
+    }
+  } while(1);
+}
+
+
+void timeout(int signal) {
+  printf("Das Casino schließt jetzt.\n");
+  exit(0);
+}
